@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app-deployment
+  labels:
+    app: nodejs-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-app-deployment
+  template:
+    metadata:
+      labels:
+        app: nodejs-app-deployment
+    spec:
+      containers:
+      - name: nginx
+        image: IMAGE
